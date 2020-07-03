@@ -1,0 +1,19 @@
+
+<form [formGroup]="reactiveForm">
+  <div class="form-group">
+    <label for="file" >File Upload</label>
+
+    <input type="file" name="file" formControlName="file" id="file" class="form-control"  accept="image/*"  multiple (change)="onSelectFile($event)" style="height: 100%"  />
+
+
+    <button (click)="saveForm(reactiveForm)" class="btn btn-success" type="submit" value="Dodaj">Dodaj</button>
+
+  </div>
+
+</form>
+
+
+
+<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" *ngIf="path">
+  <img [src]="path">
+</div>

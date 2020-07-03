@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {LoginService} from './login.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AuthModule} from './auth/auth.module';
 import {SharedModule} from './shared/shared.module';
+import {ImageService} from './image.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import {SharedModule} from './shared/shared.module';
     HttpClientModule,
     AuthModule,
     SharedModule,
+    ReactiveFormsModule,
 
   ],
-  providers: [LoginService],
+  providers: [LoginService,ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
