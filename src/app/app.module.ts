@@ -11,11 +11,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {SharedModule} from './shared/shared.module';
 import {ImageService} from './image.service';
+import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    PhotoGalleryComponent,
 
   ],
   imports: [
