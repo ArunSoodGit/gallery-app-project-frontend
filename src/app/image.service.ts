@@ -18,6 +18,8 @@ export class ImageService {
 
 
   }
+  getImages(){
+    return this.http.get('http://localhost:8080/get-image');
+  }
 
- 
 }

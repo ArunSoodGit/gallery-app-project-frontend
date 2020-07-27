@@ -29,7 +29,7 @@ export class HomeComponent {
     console.log(file);
 
     if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+      const reader = new FileReader();
       reader.onload = (event: any) => {
         this.path = event.target.result;
 
