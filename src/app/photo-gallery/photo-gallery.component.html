@@ -1,3 +1,11 @@
-<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
-
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">My Gallery</h1>
+<hr class="mt-2 mb-5">
+<div class="picture-grid" >
+  <div class="grid-box"*ngFor="let image of images | async" >
+    <img [src]="image.imageUrl"/>
+  </div>
 </div>
+
+
+
+

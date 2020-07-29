@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ImageService} from '../image.service';
+import {Image} from '../models/Image';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-photo-gallery',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoGalleryComponent implements OnInit {
 
-  constructor() { }
+  images: Observable<Image[]>;
+
+  constructor(private imageService: ImageService) {
+  }
 
   ngOnInit(): void {
+    this.images = this.imageService.getImages();
+
+
   }
 
 }

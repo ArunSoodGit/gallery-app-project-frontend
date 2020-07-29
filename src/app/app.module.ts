@@ -30,7 +30,7 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
     ReactiveFormsModule,
 
   ],
-  providers: [LoginService,ImageService],
+  providers: [LoginService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
