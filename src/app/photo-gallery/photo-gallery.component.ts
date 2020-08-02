@@ -15,6 +15,7 @@ export class PhotoGalleryComponent implements OnInit {
   images: Image[];
 
 
+
   constructor(private imageService: ImageService, public gallery: Gallery, public lightbox: Lightbox) {
 
 
