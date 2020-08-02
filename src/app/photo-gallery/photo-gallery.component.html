@@ -1,11 +1,20 @@
-<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">My Gallery</h1>
-<hr class="mt-2 mb-5">
-<div class="picture-grid" >
-  <div class="grid-box"*ngFor="let image of images | async" >
-    <img [src]="image.imageUrl"/>
+<a routerLink="/home">
+  <button class="btn">+</button>
+</a>
+<div class="container " gallerize>
+
+  <div class="row ">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 p-0 " *ngFor="let image of images">
+
+      <img class="img-fluid"
+           [src]="image.imageUrl"
+           [attr.imageSrc]="image.imageUrl"
+           [attr.thumbSrc]="image.imageUrl">
+
+
+    </div>
+
   </div>
+
 </div>
-
-
-
 
