@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ImageService} from '../image.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent {
   reactiveForm: any = FormGroup;
   public userFile: any = File;
 
-  constructor(private imageService: ImageService, private fb: FormBuilder) {
+  constructor(private imageService: ImageService, private fb: FormBuilder, private router: Router) {
     this.reactiveForm = this.fb.group({
         file: new FormControl('', Validators.required)
       }
@@ -47,8 +48,8 @@ export class HomeComponent {
       formData.append('file', this.userFile);
       this.imageService.postImage(formData).subscribe((response => {
         console.log(response);
+        this.router.navigate(['/gallery']);
       }));
-
 
     }
   }
