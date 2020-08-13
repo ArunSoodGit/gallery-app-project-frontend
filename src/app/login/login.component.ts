@@ -24,7 +24,7 @@ export class LoginComponent {
   doLogin(form: NgForm) {
     console.log(this.username, this.password, form.value);
     this.service.authenticationService(this.username, this.password).subscribe(data => {
-        console.log("fsa");
+
       this.router.navigate(['/gallery']);
     });
   }
