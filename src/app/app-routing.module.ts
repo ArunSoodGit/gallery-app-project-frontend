@@ -6,13 +6,14 @@ import {HomeComponent} from './home/home.component';
 import {PhotoGalleryComponent} from './photo-gallery/photo-gallery.component';
 import {HeaderComponent} from './header/header.component';
 import {AuthGaurdService} from './service/auth-guard.service';
+import {LogoutComponent} from './logout/logout.component';
 
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGaurdService]},
   {path: 'gallery', component: PhotoGalleryComponent, canActivate: [AuthGaurdService]},
   {path: 'login', component: LoginComponent},
-  {path: 'logout', component: LoginComponent, canActivate: [AuthGaurdService]},
+  {path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
 ];
 
 @NgModule({
