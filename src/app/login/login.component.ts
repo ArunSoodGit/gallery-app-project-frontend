@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
-import {LoginService} from '../login.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {NgForm} from '@angular/forms';
+import {Component, Input} from '@angular/core';
+
+
+import {AuthenticationService} from '../service/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,23 +11,29 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent {
 
-  username: string;
-  password: string;
-  errorMessage = 'Invalid Credentials';
-  successMessage: string;
+  username = '';
+  password = '';
   invalidLogin = false;
-  loginSuccess = false;
+  @Input() error: string | null;
 
-  constructor(private service: LoginService, private router: Router, private route: ActivatedRoute,) {
+  constructor(private router: Router,
+              private loginservice: AuthenticationService) {
   }
 
 
-  doLogin(form: NgForm) {
-    console.log(this.username, this.password, form.value);
-    this.service.authenticationService(this.username, this.password).subscribe(data => {
+  checkLogin() {
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+        data => {
+          this.router.navigate(['gallery']);
+          this.invalidLogin = false;
+        },
+        error => {
+          this.invalidLogin = true;
+          this.error = error.message;
 
-      this.router.navigate(['/gallery']);
-    });
+        }
+      )
+    );
+
   }
-
 }

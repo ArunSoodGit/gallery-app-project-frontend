@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Image} from './models/Image';
+import {Image} from '../models/Image';
 import {GalleryItem} from '@ngx-gallery/core';
 
 @Injectable({

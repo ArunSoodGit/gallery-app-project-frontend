@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ImageService} from '../image.service';
+import {ImageService} from '../service/image.service';
 import {Router} from '@angular/router';
 
 @Component({

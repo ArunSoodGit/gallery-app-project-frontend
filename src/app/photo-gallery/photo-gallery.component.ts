@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {ImageService} from '../image.service';
+import {ImageService} from '../service/image.service';
 import {Gallery} from '@ngx-gallery/core';
 import {Lightbox} from '@ngx-gallery/lightbox';
 import {Image} from '../models/Image';
