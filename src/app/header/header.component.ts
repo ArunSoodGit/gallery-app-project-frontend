@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {AuthenticationService} from '../service/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   faCoffee = faCoffee;
 
-  constructor() {
+  constructor(public loginService: AuthenticationService) {
   }
 
   ngOnInit(): void {
