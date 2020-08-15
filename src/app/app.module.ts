@@ -16,7 +16,7 @@ import {GalleryModule} from '@ngx-gallery/core';
 import {LightboxModule} from '@ngx-gallery/lightbox';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {GallerizeModule} from '@ngx-gallery/gallerize';
-
+import { NgxDropzoneModule } from 'ngx-dropzone';
 import {LoginComponent} from './login/login.component';
 import {HeaderComponent} from './header/header.component';
 import {BasicAuthHtppInterceptorService} from './service/basic-auth-http-interceptor.service';
@@ -37,7 +37,7 @@ import { LogoutComponent } from './logout/logout.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    NgxDropzoneModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     GalleryModule,

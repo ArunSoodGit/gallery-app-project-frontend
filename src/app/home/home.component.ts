@@ -12,45 +12,45 @@ export class HomeComponent {
   path: string;
 
   selectedFiles: FileList;
-
+  files: File[] = [];
   reactiveForm: any = FormGroup;
   public userFile: any = File;
 
-  constructor(private imageService: ImageService, private fb: FormBuilder, private router: Router) {
-    this.reactiveForm = this.fb.group({
-        file: new FormControl('', Validators.required)
-      }
-    );
+  constructor(private imageService: ImageService, private router: Router) {
+
   }
 
-
-  onSelectFile(event) {
-    const file = event.target.files[0];
+  sent() {
+    const file = this.files[0];
     this.userFile = file;
     console.log(file);
+    const formData = new FormData();
+    formData.append('file', this.userFile);
+    this.imageService.postImage(formData).subscribe((response => {
+      console.log(response);
+      this.router.navigate(['/gallery']);
+    }));
+  }
 
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (event: any) => {
-        this.path = event.target.result;
+  onSelect(event) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+    const reader = new FileReader();
+    reader.onload = (event2: any) => {
+      this.path = event2.target.result;
 
-      };
-      reader.readAsDataURL(event.target.files[0]);
+    };
+    reader.readAsDataURL(this.files[0]);
+
+    if (this.files.length > 1) {// sprawdzenie, czy tablica plików ma więcej niż jedną zawartość
+      this.replaceFile(); // zamień plik
     }
-    this.selectedFiles = file;
 
   }
 
-  saveForm(submitForm: FormGroup) {
-    if (submitForm.valid) {
-      const file = submitForm.value;
-      const formData = new FormData();
-      formData.append('file', this.userFile);
-      this.imageService.postImage(formData).subscribe((response => {
-        console.log(response);
-        this.router.navigate(['/gallery']);
-      }));
-
-    }
+  replaceFile() {
+    this.files.splice(0, 1); // index = 0, remove_count = 1
   }
+
 }
+

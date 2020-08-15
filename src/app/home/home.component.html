@@ -4,26 +4,22 @@
 
 
       <div class="card">
-        <img class="card-img-top" [src]="path" style="background-color: #EB6A5A">
+
         <div class="card-body">
-          <form [formGroup]="reactiveForm">
+          <ngx-dropzone  (change)="onSelect($event)">
+
+            <img class="img-fluid" [src]="path">
 
 
-            <input type="file" name="file" formControlName="file" id="file" class="form-control" accept="image/*"
-                   multiple
-                   (change)="onSelectFile($event)"/>
-
-
-            <button (click)="saveForm(reactiveForm)" class="btn btn-success" type="submit" value="Dodaj">Dodaj</button>
-
-
-          </form>
+          </ngx-dropzone>
         </div>
+        <button (click)="sent()" class="btn btn-danger" type="submit" value="Doda">Dodaj zdjęcie</button>
       </div>
 
 
     </div>
   </div>
 </div>
+
 
 
