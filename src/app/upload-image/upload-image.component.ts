@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormGroup} from '@angular/forms';
 import {ImageService} from '../service/image.service';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './upload-image.component.html',
+  styleUrls: ['./upload-image.component.scss']
 })
-export class HomeComponent {
+export class UploadImageComponent {
   path: string;
 
   selectedFiles: FileList;
@@ -35,6 +35,9 @@ export class HomeComponent {
   onSelect(event) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    if (this.files.length > 1) {// sprawdzenie, czy tablica plików ma więcej niż jedną zawartość
+      this.replaceFile(); // zamień plik
+    }
     const reader = new FileReader();
     reader.onload = (event2: any) => {
       this.path = event2.target.result;
@@ -42,9 +45,6 @@ export class HomeComponent {
     };
     reader.readAsDataURL(this.files[0]);
 
-    if (this.files.length > 1) {// sprawdzenie, czy tablica plików ma więcej niż jedną zawartość
-      this.replaceFile(); // zamień plik
-    }
 
   }
 

@@ -15,13 +15,13 @@
         <a class="nav-link" *ngIf="loginService.isUserLoggedIn()"href="/gallery"> <i class="fa fa-image icon"></i> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" href="/home"><i class="fa fa-upload icon"></i></a>
+        <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" href="/upload-image"><i class="fa fa-upload icon"></i></a>
       </li>
     </ul>
 
       <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" href="/logout">
 
-        <i class="fa fa-sign-in icon" ></i>
+        <i class="fa fa fa-sign-out icon" ></i>
       </a>
 
 

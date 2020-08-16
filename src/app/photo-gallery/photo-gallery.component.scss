@@ -1,4 +1,4 @@
-img{
+img {
   width: 100%;
   height: 150px;
   transition: all 0.3s ease-in-out;
@@ -6,22 +6,53 @@ img{
   overflow: hidden;
   margin: 1px;
 }
-img:hover{
- // transform: scale(0.9);
+
+img:hover {
+  // transform: scale(0.9);
   opacity: 1;
   -webkit-transform: scale(1.15);
   -ms-transform: scale(1.15);
   transform: scale(1.15);
 
+
 }
-.test{
+
+.test {
   transition: all 0.3s ease-in-out;
   opacity: 0.9;
   overflow: hidden;
-}
-.test{
   background-color: black;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+
 }
-.container{
+.test:hover{
+  .btn {
+    display: block;
+
+  }
+  .btn:hover{
+   color: black;
+  }
+}
+
+.container {
   margin-top: 50px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+  .btn {
+    display: none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+  font-weight: bold;
+    border: none;
+    cursor: pointer;
+
+  }
 }
+

@@ -9,11 +9,12 @@
 button{
   margin-top: 50px;
   font-size: 80%;
-  border-radius: 5rem;
+  border-radius: 15px;
   letter-spacing: .1rem;
   font-weight: bold;
   padding: 0.8rem;
   transition: all 0.2s;
+  box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.1);
 
 }
 input{
