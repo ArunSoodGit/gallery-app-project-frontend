@@ -1,4 +1,4 @@
-<div class="container " gallerize>
+<div class="container " gallerize = "gallery">
 
   <div class="row ">
     <div class="col-6 col-sm-4 col-md-3 col-lg-2 p-0 test" *ngFor="let image of images;index as i">
@@ -8,7 +8,7 @@
            [src]="image.imageUrl"
            [attr.imageSrc]="image.imageUrl"
            [attr.thumbSrc]="image.imageUrl">
-      <button class="btn btn-danger delete" data-toggle="modal" data-target="#exampleModal" (click)="getIndex(i)">x
+      <button class="btn btn-danger delete" data-toggle="modal" data-target="#exampleModal" (click)="getIndex(image.id)">x
       </button>
     </div>
 

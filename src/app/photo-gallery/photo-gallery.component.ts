@@ -1,7 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ImageService} from '../service/image.service';
 import {Gallery} from '@ngx-gallery/core';
-import {Lightbox} from '@ngx-gallery/lightbox';
 import {Image} from '../models/Image';
 
 @Component({
@@ -11,27 +10,43 @@ import {Image} from '../models/Image';
 
 })
 export class PhotoGalleryComponent implements OnInit {
-  @ViewChild('closebutton') closebutton;
+
   images: Image[];
 
   index: number;
 
-  constructor(private imageService: ImageService, public gallery: Gallery, public lightbox: Lightbox) { }
+  constructor(private imageService: ImageService, public gallery: Gallery) {
+    gallery.ref('gallery').setConfig({
+      thumbPosition: 'bottom',
+      imageSize: 'cover',
+    });
+  }
 
   ngOnInit(): void {
+    this.getImages();
 
+
+  }
+
+  getImages(): void {
     this.imageService.getImages().subscribe(image => {
       this.images = image;
 
     });
-
   }
 
-  remove(index) {
-    this.images.splice(index, 1);
+  remove(index): void {
+
+    this.imageService.deleteImage(index).subscribe(
+      data => {
+        this.getImages();
+      }
+    );
+
   }
 
   getIndex(index) {
     this.index = index;
+    console.log(index);
   }
 }
