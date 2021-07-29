@@ -1,27 +1,6 @@
-# SimpleUniversityProjectFrontend
+# GalleryAppProjectFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Screenshot_2](https://user-images.githubusercontent.com/57317746/127509300-c1006c08-fa49-4041-ad3e-8abeca87e8c4.png)
+![Screenshot_4](https://user-images.githubusercontent.com/57317746/127509319-6feb1cc5-a187-4e5a-8e45-d6c8ecf17040.png)
+![Screenshot_5](https://user-images.githubusercontent.com/57317746/127509324-7a2f90ee-3cc5-49d8-afdb-eb79cf1cf0de.png)
+![Screenshot_6](https://user-images.githubusercontent.com/57317746/127509331-4b83659b-bab3-4a78-9abe-1b864e688f18.png)
